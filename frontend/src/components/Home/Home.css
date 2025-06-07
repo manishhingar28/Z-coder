@@ -1,0 +1,58 @@
+.Home h1{
+    color:rgb(237, 234, 158);
+    font-weight: bold;
+    font-size: 70px;
+    margin-top: -5%;
+
+    text-shadow: 3px 5px 5px rgb(101, 96, 94);
+}
+
+.Home p{
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+    color:rgb(242, 243, 237);
+    font-size: 20px;
+    margin: 50px 10px 0px 10px;
+    padding: 10px 100px 10px 100px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.logintab{
+    position: relative;
+    top: 130px;
+
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logintab text{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.logintab text:hover{
+    color: rgb(204, 206, 209);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.Home p a{
+    color: rgb(242, 243, 237);
+}
+
+.Home
+{
+    width: 80%;
+    height: 0.7vh;
+    position: relative;
+    top: 10em;
+    left: 10%;
+    height: 600px;
+    text-align: center;
+    border-radius:10px ;
+    padding: 10px;
+}
