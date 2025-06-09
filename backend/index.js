@@ -13,7 +13,7 @@ const Contest = require('./models/Contest');
 const app = express();
 app.use(cors());
 
-mongoose.connect('mongodb+srv://molik28:molik%402801@cluster0.hffl48d.mongodb.net/', {
+mongoose.connect('mongodb+srv://gopalsingh2910:gopal2005@zcoder.bkku78z.mongodb.net/ZCoder?retryWrites=true&w=majority&appName=ZCoder', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
