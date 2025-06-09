@@ -7,23 +7,33 @@ import HomeButton from '../Home/HomeButton';
 const Signup = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
   const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/users/signup', { username, password });
-      setSuccessMessage('Signup successful! Redirecting to login...');
+      const response = await axios.post('http://localhost:3000/users/signup', {
+        username,
+        password,
+      });
+
+      // Success (e.g., 201 Created)
+      setMessage(response.data.message || 'Signup successful!');
+      setIsSuccess(true);
       setTimeout(() => {
-        navigate('/login'); // Redirect to the login page
-      }, 2000); // 2-second delay to show the success message
+        navigate('/login');
+      }, 2000);
     } catch (error) {
-      console.error(error);
-      if (error.response && error.response.status === 400) {
-        setSuccessMessage('User already exists');
+      // Backend sent an expected error (e.g., 400)
+      if (error.response) {
+        setMessage(error.response.data.message || 'Signup failed.');
+        setIsSuccess(false);
       } else {
-        setSuccessMessage('Signup failed. Please try again.');
+        // Unexpected error (network, etc.)
+        setMessage('Network or server error.');
+        setIsSuccess(false);
       }
     }
   };
@@ -34,18 +44,22 @@ const Signup = () => {
       <div>
         <form onSubmit={handleSignup}>
           <h2>Sign up</h2>
-          {successMessage && alert('Successfuly signed in')}
+          {message && (
+            <p style={{ color: isSuccess ? 'green' : 'red' }}>{message}</p>
+          )}
           <input
             type="text"
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            required
           />
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
           <button type="submit">Sign up</button>
         </form>

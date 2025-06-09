@@ -7,29 +7,27 @@ import HomeButton from '../Home/HomeButton';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [welcomeMessage, setWelcomeMessage] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const loginData = {
-        username,
-        password,
-      };
-
-      // Include profile information if provided
+      const loginData = { username, password };
       const response = await axios.post('http://localhost:3000/users/login', loginData);
+
       const { token } = response.data;
       localStorage.setItem('token', token);
-      console.log('Login successful. Token stored in local storage.');
-      setWelcomeMessage(`Welcome, ${username}!`);
+      setMessage(`Welcome, ${username}!`);
+      setIsSuccess(true);
+
       setTimeout(() => {
-        navigate('/'); // Redirect to the home page or any other page
-      }, 1000); // 2-second delay to show the welcome message
+        navigate('/'); // Redirect after showing welcome message
+      }, 1500);
     } catch (error) {
-      setError('Invalid username or password.');
+      setMessage('Invalid username or password.');
+      setIsSuccess(false);
       console.error(error);
     }
   };
@@ -39,22 +37,34 @@ const Login = () => {
       <HomeButton />
       <form id="loginform" onSubmit={handleLogin}>
         <h2>Login</h2>
-        {error && alert('Invalid Username or password!')}
-        {welcomeMessage && alert('Logged in as ${username}')}
+
+        {message && (
+          <p style={{ color: isSuccess ? 'green' : 'red' }}>{message}</p>
+        )}
+
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          required
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
+
         <button id="login" type="submit">Login</button>
-        <button id="signup" type="signup" onClick={() => navigate('/signup')}>Sign up</button>
+        <button
+          id="signup"
+          type="button"
+          onClick={() => navigate('/signup')}
+        >
+          Sign up
+        </button>
       </form>
     </div>
   );
