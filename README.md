@@ -62,11 +62,11 @@ ZCoder is a sophisticated web platform designed to help users track their compet
 
 1. Home Page<br>
 
-![home](./snippet/home.png)<br>
+![home](./snippet/__MACOSX/snippet/._png)<br>
 
 2. Sign Up<br>
 
-![signup](./snippet/signup.png)<br>
+![signup](./snippet/__MACOSX/snippet/._signup.png)<br>
 
 3. LogIn<br>
 
