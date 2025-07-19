@@ -89,9 +89,9 @@ ZCoder is a sophisticated web platform designed to help users track their compet
 ![your-problems](./snippet/your-problems.png)<br>
 
 
-8. Contest Calander<br>
+8. Contest Calendar<br>
 
-![contest-calander](./snippet/contest-calender.png)<br>
+![contest-calendar](./snippet/contest-calendar.png)<br>
 
 
 ## Contributing
