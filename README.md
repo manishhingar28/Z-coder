@@ -17,7 +17,6 @@ ZCoder is a sophisticated web platform designed to help users track their compet
 - **Frontend:** React.js, Axios
 - **Backend:** Node.js, Express   
 - **Database:** MongoDB, Mongoose
-- **Real-time Communication:** WebSocket
 
 ## Installation and Setup
 
