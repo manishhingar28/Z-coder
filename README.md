@@ -5,7 +5,6 @@ ZCoder is a sophisticated web platform designed to help users track their compet
 
 ## Features
  - **Contest Calenders:** Create and manage personalized calendars for coding contests across multiple platforms.
- - **Real Time Updates:** Integrated WebSocket for real-time notifications and updates on contest schedules.
  - **User Profiles:** Maintain personalized profiles to track progress, participation history, and favorite contests.
  - **Search and Filters:** Advanced search and filter options to find contests by platform, date, difficulty, and more.
  - **Responsive Design:** Responsive and user-friendly interface built with React.js, ensuring accessibility across various devices.
