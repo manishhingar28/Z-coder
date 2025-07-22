@@ -102,10 +102,10 @@ We welcome contributions from the community. If you wish to contribute to ZCoder
  - Open a Pull Request for review.
 
 ## Team Members:
-Manish Hingar
-Pratik Ranjan
-Gopal Singh
-Vivek
+-Manish Hingar
+-Pratik Ranjan
+-Gopal Singh
+-Vivek
 
 ## Acknowledgements
 We would like to extend our gratitude to the developers and contributors of the libraries and frameworks utilized in this project.
